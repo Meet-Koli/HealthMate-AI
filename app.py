@@ -41,8 +41,8 @@ st.markdown("""
         background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
     }
     
-    /* 2. Normal Text */
-    .stMarkdown, p, li, .stText, .stChatInput {
+    /* 2. Normal Text - FIXED: Removed global 'li' selector to prevent menu conflict */
+    .stMarkdown p, .stMarkdown li, .stText, .stChatInput {
         color: #111111 !important;
         font-size: 19px !important;
         font-weight: 500 !important;
@@ -79,13 +79,20 @@ st.markdown("""
     }
 
     /* 6. FIX: DROPDOWN MENU COLORS */
+    /* Ensure the popover background is white so black text is visible */
     div[data-baseweb="popover"], div[data-baseweb="menu"], ul {
         background-color: #ffffff !important;
     }
+    /* Target specific options to ensure high contrast */
     li[data-baseweb="option"] {
         color: #000000 !important;
         background-color: #ffffff !important;
     }
+    /* Hover state for options */
+    li[data-baseweb="option"]:hover {
+        background-color: #e8f5e9 !important;
+    }
+    
     div[data-baseweb="select"] > div {
         background-color: #ffffff !important;
         color: #000000 !important;
@@ -293,4 +300,3 @@ elif menu == "Health Assessment":
             st.markdown("### 🩺 Your Personalized Health Report")
 
             st.markdown(response)
-
