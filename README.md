@@ -1,6 +1,6 @@
 # 🏥 HealthMate - AI Health Assistant
 
-**HealthMate** is a comprehensive, AI-powered health companion application built using **Python** and **Streamlit**. It leverages the **Google Gemini 1.5 Flash API** to provide accessible, real-time health guidance, mental health support, and lifestyle assessments.
+**HealthMate** is a comprehensive, AI-powered health companion application built using **Python** and **Streamlit**. It leverages the **Google Gemini Flash Model API** to provide accessible, real-time health guidance, mental health support, and lifestyle assessments.
 
 > **Note:** This project aligns with **UN Sustainable Development Goal 3 (Good Health and Well-being)** by making preliminary health guidance accessible to everyone.
 
