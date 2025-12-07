@@ -8,10 +8,8 @@ import os
 # ==========================================
 # SECURE: Get key from Streamlit Secrets (for Cloud) or Environment Variables
 try:
-    # This checks if we are on Streamlit Cloud
     if "GOOGLE_API_KEY" in st.secrets:
         GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
-    # This checks if we are running locally with an env var
     else:
         GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 except FileNotFoundError:
@@ -295,3 +293,4 @@ elif menu == "Health Assessment":
             st.markdown("### 🩺 Your Personalized Health Report")
 
             st.markdown(response)
+
