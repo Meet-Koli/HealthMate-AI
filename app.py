@@ -21,7 +21,7 @@ except FileNotFoundError:
 # Configure the Gemini API
 try:
     genai.configure(api_key=GOOGLE_API_KEY)
-    model = genai.GenerativeModel('gemini-1.5-flash') # Updated to 1.5 (2.5 doesn't exist yet publicly)
+    model = genai.GenerativeModel('gemini-2.5-flash') 
 except Exception as e:
     st.error(f"Error configuring API: {e}. Please check your API Key.")
 
@@ -293,4 +293,5 @@ elif menu == "Health Assessment":
                 
             st.success("Assessment Complete!")
             st.markdown("### 🩺 Your Personalized Health Report")
+
             st.markdown(response)
