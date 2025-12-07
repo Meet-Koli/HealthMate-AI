@@ -32,16 +32,30 @@ st.set_page_config(
 )
 
 # ==========================================
-# 2. CUSTOM CSS (Fixed Dropdown Colors)
+# 2. CUSTOM CSS (Hide GitHub/Fork & Colors)
 # ==========================================
 st.markdown("""
     <style>
-    /* 1. Main Background */
+    /* --- HIDE STREAMLIT UI ELEMENTS --- */
+    /* 1. Hide the "Three Dots" Menu (Contains 'View on GitHub') */
+    #MainMenu {visibility: hidden;}
+    
+    /* 2. Hide the Top Header (Contains 'Deploy' button) */
+    header {visibility: hidden;}
+    
+    /* 3. Hide the 'Made with Streamlit' Footer */
+    footer {visibility: hidden;}
+    
+    /* 4. Hide the Deploy Button specifically (just in case) */
+    .stDeployButton {display:none;}
+    
+    /* --- APP STYLING --- */
+    /* 5. Main Background */
     .stApp {
         background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
     }
     
-    /* 2. Normal Text - FIXED: Removed global 'li' selector to prevent menu conflict */
+    /* 6. Normal Text */
     .stMarkdown p, .stMarkdown li, .stText, .stChatInput {
         color: #111111 !important;
         font-size: 19px !important;
@@ -49,14 +63,14 @@ st.markdown("""
         line-height: 1.6 !important;
     }
 
-    /* 3. Headers */
+    /* 7. Headers */
     h1, h2, h3, .main-header {
         color: #1b5e20 !important;
         font-weight: 800 !important;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 
-    /* 4. Buttons */
+    /* 8. Buttons */
     div.stButton > button {
         background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
         color: white !important;
@@ -71,37 +85,34 @@ st.markdown("""
         transform: scale(1.02);
     }
 
-    /* 5. WIDGET LABELS (Questions) */
+    /* 9. WIDGET LABELS */
     label, .stSelectbox label, .stSlider label, .stRadio label {
-        color: #1b5e20 !important; /* Dark Green */
+        color: #1b5e20 !important; 
         font-size: 20px !important;
         font-weight: 700 !important;
     }
 
-    /* 6. FIX: DROPDOWN MENU COLORS */
+    /* 10. DROPDOWN MENU COLORS */
     div[data-baseweb="popover"], div[data-baseweb="menu"], ul {
         background-color: #ffffff !important;
     }
-    /* Target specific options to ensure high contrast */
     li[data-baseweb="option"] {
         color: #000000 !important;
         background-color: #ffffff !important;
     }
-    /* Hover state for options */
     li[data-baseweb="option"]:hover {
-        background-color: #e8f5e9 !important;
+        background-color: #c5e1a5 !important; 
     }
-    
     div[data-baseweb="select"] > div {
         background-color: #ffffff !important;
         color: #000000 !important;
         border-color: #2e7d32 !important;
     }
             
-    /* Sidebar Styling */
+    /* 11. SIDEBAR STYLING */
     section[data-testid="stSidebar"] {
-        background-color: #c5e1a5;
-        border-right: 2px solid #9ccc65;
+        background-color: #c5e1a5; 
+        border-right: 2px solid #9ccc65; 
     } 
     </style>
 """, unsafe_allow_html=True)
@@ -299,5 +310,3 @@ elif menu == "Health Assessment":
             st.markdown("### 🩺 Your Personalized Health Report")
 
             st.markdown(response)
-
-
