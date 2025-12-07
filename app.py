@@ -79,7 +79,6 @@ st.markdown("""
     }
 
     /* 6. FIX: DROPDOWN MENU COLORS */
-    /* Ensure the popover background is white so black text is visible */
     div[data-baseweb="popover"], div[data-baseweb="menu"], ul {
         background-color: #ffffff !important;
     }
@@ -101,8 +100,8 @@ st.markdown("""
             
     /* Sidebar Styling */
     section[data-testid="stSidebar"] {
-        background-color: #f1f8e9;
-        border-right: 2px solid #c8e6c9;
+        background-color: #dcedc8;
+        border-right: 2px solid #aed581;
     } 
     </style>
 """, unsafe_allow_html=True)
@@ -300,3 +299,4 @@ elif menu == "Health Assessment":
             st.markdown("### 🩺 Your Personalized Health Report")
 
             st.markdown(response)
+
