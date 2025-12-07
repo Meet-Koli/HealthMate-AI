@@ -100,8 +100,8 @@ st.markdown("""
             
     /* Sidebar Styling */
     section[data-testid="stSidebar"] {
-        background-color: #dcedc8;
-        border-right: 2px solid #aed581;
+        background-color: #c5e1a5;
+        border-right: 2px solid #9ccc65;
     } 
     </style>
 """, unsafe_allow_html=True)
@@ -299,4 +299,5 @@ elif menu == "Health Assessment":
             st.markdown("### 🩺 Your Personalized Health Report")
 
             st.markdown(response)
+
 
